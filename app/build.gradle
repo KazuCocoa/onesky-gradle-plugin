@@ -9,7 +9,7 @@ buildscript {
         maven { url 'https://repo.gradle.org/gradle/repo' }
     }
     dependencies {
-        classpath 'com.cookpad.android:onesky-gradle-plugin:0.1.1'
+        classpath 'com.cookpad.android:onesky-gradle-plugin:+'
     }
 }
 apply plugin: 'com.cookpad.android.onesky.plugin'
@@ -50,6 +50,6 @@ onesky {
     apiSecret oneskyApiSecret
     projectId oneskyProjectId
 
-//    includes = ['strings.*.xml']
-//    excludes = ['strings.xml']
+    includes = ['strings.*.xml']
+    excludes = ['strings.xml']
 }

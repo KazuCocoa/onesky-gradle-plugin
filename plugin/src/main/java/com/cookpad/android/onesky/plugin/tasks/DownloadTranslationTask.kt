@@ -13,16 +13,7 @@ open class DownloadTranslationTask : OneskyTask() {
     }
 
     val locales by lazy {
-        if (oneskyExtension!!.locales.isEmpty()) {
-            resDir.listFiles()
-                    .filter { it.name.startsWith("values-") }
-                    .filter {
-                        File("${it.absolutePath}/strings.xml").exists()
-                    }
-                    .map { localeFromValuesDirName(it.name) }
-        } else {
-            oneskyExtension!!.locales
-        }
+        oneskyExtension.locales
     }
 
     @TaskAction

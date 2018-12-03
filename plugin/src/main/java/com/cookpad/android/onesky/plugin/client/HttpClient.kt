@@ -13,8 +13,8 @@ open class HttpClient {
 
         if(result is Result.Failure) {
             println("Failed! ${result.error.exception.javaClass.simpleName}")
-//            println(r.toString())
-//            println(o.toString())
+            println(r.toString())
+            println(o.toString())
         }
 
         return result
