@@ -1,5 +1,7 @@
 # OneSky Gradle plugin
 
+[ ![Download](https://api.bintray.com/packages/cookpad-inc/maven/onesky-gradle-plugin/images/download.svg) ](https://bintray.com/cookpad-inc/maven/onesky-gradle-plugin/_latestVersion)
+
 Gradle Plugin for [OneSky](https://www.oneskyapp.com/)
 
 ## Tasks
@@ -21,21 +23,20 @@ uploadTranslation - Upload the default translation file (values/strings.xml)
 // build.gradle
 buildscript {
     dependencies {
-        classpath 'rejasupotaro:onesky-gradle-plugin:<latest-version>'
+        classpath 'com.cookpad.android:onesky-gradle-plugin:<latest-version>'
     }
 }
 ```
 
 ```groovy
 // app/build.gradle
-apply plugin: 'rejasupotaro.onesky.plugin'
+apply plugin: 'com.cookpad.android.onesky.plugin'
 onesky {
     apiKey "<api-key>"
     apiSecret "<api-secret>"
     projectId <project_id>
 }
 ```
-
 
 ## Compilation
 
@@ -85,3 +86,6 @@ Download started in multi-thread mode, to economy time.
 
 > NOTE: 'en' locale allows to prevent modification of strings defined by developer, that
 > greatly reduce risks of merge conflicts.
+
+# License
+MIT

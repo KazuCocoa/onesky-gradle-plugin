@@ -1,24 +1,24 @@
+apply plugin: 'com.android.application'
+
 buildscript {
     repositories {
         jcenter()
         maven {
-            url uri("../repo")
+            url uri("./repo")
         }
         maven { url 'https://repo.gradle.org/gradle/repo' }
     }
     dependencies {
-        classpath 'rejasupotaro:onesky-gradle-plugin:+'
+        classpath 'com.cookpad.android:onesky-gradle-plugin:0.1.1'
     }
 }
-
-apply plugin: 'com.android.application'
-apply plugin: 'rejasupotaro.onesky.plugin'
+apply plugin: 'com.cookpad.android.onesky.plugin'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.3"
+    buildToolsVersion '27.0.3'
     defaultConfig {
-        applicationId "rejasupotaro.onesky.app"
+        applicationId "com.cookpad.android.onesky.app"
         minSdkVersion 17
         targetSdkVersion 25
         versionCode 1
@@ -34,13 +34,13 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:25.3.1'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    testCompile 'junit:junit:4.12'
+    implementation 'com.android.support:appcompat-v7:25.3.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    testImplementation 'junit:junit:4.12'
 }
 
 onesky {
@@ -50,6 +50,6 @@ onesky {
     apiSecret oneskyApiSecret
     projectId oneskyProjectId
 
-    includes = ['strings.*.xml']
-    excludes = ['strings.xml']
+//    includes = ['strings.*.xml']
+//    excludes = ['strings.xml']
 }

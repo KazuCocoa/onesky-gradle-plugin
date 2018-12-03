@@ -1,8 +1,8 @@
-package rejasupotaro.onesky.plugin.tasks
+package com.cookpad.android.onesky.plugin.tasks
 
 import org.gradle.api.DefaultTask
-import rejasupotaro.onesky.plugin.OneskyExtension
-import rejasupotaro.onesky.plugin.client.Onesky
+import com.cookpad.android.onesky.plugin.OneskyExtension
+import com.cookpad.android.onesky.plugin.client.Onesky
 import java.io.File
 import java.util.regex.Pattern
 
