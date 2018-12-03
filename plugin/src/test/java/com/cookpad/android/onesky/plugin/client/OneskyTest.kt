@@ -74,6 +74,7 @@ class OneskyTest {
         assertThat(paramsCaptor.firstValue.map { it.first }).containsOnly(
                 "api_key",
                 "dev_hash",
+                "file",
                 "timestamp",
                 "file_format",
                 "is_keeping_all_strings")
@@ -102,6 +103,7 @@ class OneskyTest {
         assertThat(paramsCaptor.firstValue.map { it.first }).containsOnly(
                 "api_key",
                 "dev_hash",
+                "file",
                 "timestamp",
                 "file_format",
                 "is_keeping_all_strings")

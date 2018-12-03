@@ -2,6 +2,7 @@ package com.cookpad.android.onesky.plugin
 
 import org.gradle.api.Plugin
 import org.gradle.api.Project
+import com.cookpad.android.onesky.plugin.OneskyExtension
 import com.cookpad.android.onesky.plugin.tasks.DownloadTranslationTask
 import com.cookpad.android.onesky.plugin.tasks.ShowTranslationProgressTask
 import com.cookpad.android.onesky.plugin.tasks.UploadTranslationTask
@@ -19,5 +20,3 @@ class OneskyPlugin : Plugin<Project> {
         }
     }
 }
-
-

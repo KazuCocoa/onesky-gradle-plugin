@@ -3,6 +3,8 @@ package com.cookpad.android.onesky.plugin.tasks
 import org.gradle.api.DefaultTask
 import com.cookpad.android.onesky.plugin.OneskyExtension
 import com.cookpad.android.onesky.plugin.client.Onesky
+import java.io.File
+import java.util.regex.Pattern
 
 open class OneskyTask : DefaultTask() {
     val version by lazy {
@@ -17,6 +19,7 @@ open class OneskyTask : DefaultTask() {
         val apiKey = oneskyExtension!!.apiKey
         val apiSecret = oneskyExtension!!.apiSecret
         val projectId = oneskyExtension!!.projectId
+
         Onesky(apiKey, apiSecret, projectId)
     }
 
@@ -27,17 +30,17 @@ open class OneskyTask : DefaultTask() {
     }
 
     val excludes by lazy {
-        oneskyExtension.excludes
+        oneskyExtension!!.excludes
             .map { Pattern.compile(it) }
     }
 
     val includes by lazy {
-        oneskyExtension.includes
+        oneskyExtension!!.includes
             .map { Pattern.compile(it) }
     }
 
     val filteredFiles by lazy {
-        when (oneskyExtension.filtersIndex) {
+        when (oneskyExtension!!.filtersIndex) {
             0 -> valuesDir.listFiles().asList()
             1 -> valuesDir.listFiles()
                 .filter { includes.any { p -> p.matcher(it.name).matches() } }

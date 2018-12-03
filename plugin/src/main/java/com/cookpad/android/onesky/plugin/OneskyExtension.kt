@@ -13,11 +13,11 @@ open class OneskyExtension {
         this.locales = locales.toSet()
     }
 
-    fun excludes(excludes: Array<String>){
+    fun excludes(excludes: Array<String>) {
         this.excludes = excludes.toSet()
     }
 
-    fun includes(includes: Array<String>){
+    fun includes(includes: Array<String>) {
         this.includes = includes.toSet()
     }
 

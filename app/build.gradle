@@ -50,6 +50,6 @@ onesky {
     apiSecret oneskyApiSecret
     projectId oneskyProjectId
 
-    includes = ['strings.*.xml']
-    excludes = ['strings.xml']
+//    includes = ['strings.*.xml']
+//    excludes = ['strings.xml']
 }

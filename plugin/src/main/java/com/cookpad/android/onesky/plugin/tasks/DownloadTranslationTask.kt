@@ -13,7 +13,7 @@ open class DownloadTranslationTask : OneskyTask() {
     }
 
     val locales by lazy {
-        oneskyExtension.locales
+        oneskyExtension!!.locales
     }
 
     @TaskAction
